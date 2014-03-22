@@ -16,9 +16,7 @@ class CreateDeploymentsTable extends Migration {
 			$table->increments('id');
 			$table->integer('priority');
 			$table->integer('editor_id')->unsigned();
-			//$table->foreign('editor_id')->references('id')->on('units')->onDelete('cascade');
 			$table->integer('editor_department_id')->unsigned();
-			//$table->foreign('editor_department_id')->references('id')->on('units')->onDelete('cascade');
 			$table->decimal('longitude');
 			$table->decimal('latitude');
 			$table->boolean('police_needed')->nullable();
