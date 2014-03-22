@@ -15,18 +15,16 @@ class CreateDeploymentsTable extends Migration {
 		Schema::create('deployments', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('priority');
-			$table->integer('editor_id')->unsiged();
-			$table->foreign('editor_id')->references('id')->on('units')->onDelete('cascade');
-			$table->integer('editor_department_id')->unsiged();
-			$table->foreign('editor_department_id')->references('id')->on('units')->onDelete('cascade');
+			$table->integer('editor_id')->unsigned();
+			$table->integer('editor_department_id')->unsigned();
 			$table->decimal('longitude');
 			$table->decimal('latitude');
 			$table->boolean('police_needed')->nullable();
 			$table->boolean('fire_deparment_needed')->nullable();
 			$table->boolean('medic_needed')->nullable();
 			$table->boolean('army_needed')->nullable();
-			$table->integer('first_revision')->unsiged();
-			$table->integer('next_revision')->unsiged();
+			$table->integer('first_revision')->unsigned();
+			$table->integer('next_revision')->unsigned();
 			$table->text('description');
 			$table->timestamps();
 		});
